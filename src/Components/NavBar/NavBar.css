@@ -24,32 +24,33 @@ li{
     margin: 2rem;
 }
 
-a{
+.linkNavBar{
     text-decoration: none;
     color: white;
-    font-size: 25px;
+    font-size: 35px;
 }
 
-a:hover{
+.linkNavBar:hover{
     color: #049971;
 }
 
-img {
+.logo {
     text-align: center;
     padding-top: 2rem;
 }
 
 /* Media Queries */
 @media (max-width: 425px){
-    img{
-        width: 70%;
+    .linkNavBar{
+        font-size: 25px;
+    }
+
+    .logo{
+        width: 90%;
     }
 }
 
-a{
-    font-size: 16px;
-    padding: 0 auto;
-}
+
 
 
 
