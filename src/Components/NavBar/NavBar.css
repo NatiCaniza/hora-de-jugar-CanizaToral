@@ -1,13 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-}
-
 .NavBar{
     background-color: #06d6a0;
     max-width: 100%;

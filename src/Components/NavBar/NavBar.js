@@ -1,4 +1,5 @@
 import './NavBar.css';
+import CartWidget from '../CartWidget/CartWidget'
 import Logo from "../../img/logo_small.png";
 
 function NavBar() {
@@ -9,6 +10,7 @@ function NavBar() {
         <li><a className='linkNavBar' href= "#">Inicio</a></li>
         <li><a className='linkNavBar' href= "#">Productos</a></li>
         <li><a className='linkNavBar' href= "#">Contacto</a></li>
+        <a href= "#"><CartWidget/></a>
       </ul>
     </div>
   );
