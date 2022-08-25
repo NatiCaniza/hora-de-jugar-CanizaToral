@@ -1,9 +1,15 @@
 import './CartWidget.css';
 import Cart from "../../img/bolsa-de-compra.png"
 
-function CartWidget() {
+function CartWidget({sumaTotalCompras}) {
     return (
-        <div className='bolsaDeCompras'><img src={Cart}/></div>
+        <div>
+            <div className='bolsaDeCompras'>
+            <img src={Cart}/>
+            </div>
+            <div className='sumaTotalCompras'>{sumaTotalCompras}
+            </div>
+        </div>
     );
 }
 
