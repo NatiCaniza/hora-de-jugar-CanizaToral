@@ -1,6 +1,5 @@
 import {useState} from "react";
 import './ItemCount.css';
-import ImagenCard from "../../img/carreraDeMente.jpg";
 
 export const ItemCount = ({stock , initial , onAdd}) =>{
     const [itemCount, setItemCount] = useState(initial);
@@ -26,7 +25,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
 
     return(
         <div className="cardProductos">
-            <img src={ImagenCard}/>
+            <img src='/img/carreraDeMente.jpg'/>
             <p className="tituloCard">Carrera de Mente</p>
             <div className="agregarQuitarItem">
                 <button className="botonAgregarQuitar" onClick={decrementar}>-</button>

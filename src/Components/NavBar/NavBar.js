@@ -1,11 +1,10 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget'
-import Logo from "../../img/logo_small.png";
 
 function NavBar({sumaTotalCompras}) {
   return (
     <div className="NavBar">
-      <div><img className='logo' src={Logo}/></div>
+      <div><img className='logo' src='/img/logo_small.png'/></div>
       <ul>
         <li><a className='linkNavBar' href= "#">Inicio</a></li>
         <li><a className='linkNavBar' href= "#">Productos</a></li>

@@ -1,3 +1,4 @@
+import './ItemList.css';
 import Item from '../Item/Item'
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -19,7 +20,7 @@ const ItemList = ()=>{
     
 
     return (
-        <div>{renderizarProductos}</div>
+        <div className='renderizarProductos'>{renderizarProductos}</div>
     )
 }
 
