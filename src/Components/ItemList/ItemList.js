@@ -14,7 +14,7 @@ const ItemList = ()=>{
 
     const renderizarProductos = products.map((prod) => {
             return(
-                <Item prod = {prod}/>
+                <Item prod = {prod} key = {prod.id}/>
             )
         })
     
@@ -24,5 +24,5 @@ const ItemList = ()=>{
     )
 }
 
-export default ItemList
+export default ItemList;
 

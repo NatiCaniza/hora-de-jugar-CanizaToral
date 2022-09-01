@@ -1,0 +1,10 @@
+.loading{
+    width: 400px;
+    height: 40px;
+    font-size: 30px;
+    color: white;
+    background-color: #049971;
+    margin: 250px 500px;
+    padding: 5px auto;
+    border-radius: 8px;
+}

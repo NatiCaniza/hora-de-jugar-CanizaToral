@@ -6,7 +6,8 @@ const products = [
         image: '/img/lifeElJuegoDeLaVida.jpg',
         category:'....',
         stock: '10',
-        description: '....'
+        initial: 0,
+        description: 'En este juego, los jugadores pueden tomar emocionantes decisiones al recorrer el camino de la vida. Mueve el peón auto por el tablero desde la Partida al Retiro, y experimenta sorpresas inesperadas con respecto a tu familia, carrera, vacaciones soñadas y otros momentos claves de la vida.'
     },
     
     {
@@ -16,6 +17,7 @@ const products = [
         image: '/img/monopoly.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
     
@@ -26,6 +28,7 @@ const products = [
         image: '/img/preguntadosRealidadAumentada.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
 
@@ -36,6 +39,7 @@ const products = [
         image: '/img/elJuegoDeLaOca.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
 
@@ -46,6 +50,7 @@ const products = [
         image: '/img/carreraDeMente.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
     
@@ -56,6 +61,7 @@ const products = [
         image: '/img/4enLinea.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
 
@@ -66,6 +72,7 @@ const products = [
         image: '/img/letras3d.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
 
@@ -76,6 +83,7 @@ const products = [
         image: '/img/batallaNaval.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     },
 
@@ -86,6 +94,7 @@ const products = [
         image: '/img/tegClasico.jpg',
         category:'....',
         stock: '10',
+        initial: 0,
         description: '....'
     }
 ]

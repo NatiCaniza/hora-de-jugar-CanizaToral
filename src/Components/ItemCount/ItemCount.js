@@ -24,9 +24,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
     }
 
     return(
-        <div className="cardProductos">
-            <img src='/img/carreraDeMente.jpg'/>
-            <p className="tituloCard">Carrera de Mente</p>
+        <div>
             <div className="agregarQuitarItem">
                 <button className="botonAgregarQuitar" onClick={decrementar}>-</button>
                 <p className="cantidadItem">{itemCount}</p>

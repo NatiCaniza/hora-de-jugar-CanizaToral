@@ -1,12 +1,15 @@
+import './Item.css'
+
 const Item = ({ prod }) => {
+    const {image,name,price} = prod
     return (
-        <div className="cardProductos">
-            <img className="image" src={prod.image} alt='/'></img>
-            <h3 className="tituloCard">{prod.name}</h3>
-            <p className="textoProductos">{prod.description}</p>
-            <p className="textoProductos">${prod.price}</p>
-        </div>
+        <div className ='item'>
+        <img  alt={name} src={image}/>
+        <h4 className="tituloCard">{name}</h4>
+        <h3>$ {price}</h3>
+        <button>Ver Producto</button>
+    </div>
     )
 }
 
-export default Item
+export default Item;
