@@ -9,7 +9,7 @@ const ItemDetail = ({onAdd, item}) => {
             <div className='itemInformacion'>
                 <h4 className="tituloCard">{name}</h4>
                 <p className="textodetail">{description}</p>
-                <h3>${price}</h3>
+                <h3>$ {price}</h3>
                 <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
             </div>
         </div>

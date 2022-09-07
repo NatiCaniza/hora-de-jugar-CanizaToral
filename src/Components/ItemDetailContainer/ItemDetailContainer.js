@@ -1,28 +1,29 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useEffect, useState } from "react";
-import {getProducts} from "../../asyncMock";
+import {getItem} from "../../asyncMock";
+import { useParams } from "react-router-dom";
 import './ItemDetailContainer.css'
 
 const ItemDetailContainer = ({onAdd}) => {
-    const [items, setItems] = useState([]);
+    const {productId} = useParams();
+    const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        getProducts()
-        .then((res) => {
-            setItems(res);
+        getItem(productId)
+        .then((respuesta)=>{
+            setItem(respuesta)
         })
-        .finally(() => setLoading(false)); 
-    },[]);
+        .finally(()=>{
+            setLoading(false)
+        })
+    },[productId])
 
-    const item = items.find(item => item.id === '1')
-    console.log(item);
-
-    const isLoading = loading? <h2 className="loading">Cargando Productos...</h2> : (
-        <ItemDetail onAdd= {onAdd} item= {item}/>
+    const isLoading = loading ? <h2 className="loading">Cargando Productos...</h2> : (
+        <ItemDetail onAdd={onAdd} item={item} />
     );
 
-    return (
+    return(
         isLoading
     )
 }
