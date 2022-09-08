@@ -1,7 +1,7 @@
 import {useState} from "react";
 import './ItemCount.css';
 
-export const ItemCount = ({stock , initial , onAdd}) =>{
+export const ItemCount = ({stock , initial , onAdd, onAdd2}) =>{
     const [itemCount, setItemCount] = useState(initial);
     const [itemStock, setItemStock] = useState(stock);
 
@@ -19,6 +19,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
 
     const handleAdd = () => {
         onAdd(itemCount);
+        onAdd2(itemCount);
         setItemStock(itemStock - itemCount);
         setItemCount(0)
     }

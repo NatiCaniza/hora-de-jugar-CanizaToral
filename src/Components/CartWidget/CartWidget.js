@@ -4,7 +4,7 @@ function CartWidget({sumaTotalCompras}) {
     return (
         <div>
             <div className='bolsaDeCompras'>
-            <img src='/img/bolsa-de-compra.png'/>
+            <img src='/img/bolsa-de-compra.png' alt='...'/>
             </div>
             <div className='sumaTotalCompras'>{sumaTotalCompras}
             </div>

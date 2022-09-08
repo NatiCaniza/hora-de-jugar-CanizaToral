@@ -48,6 +48,20 @@
     margin: 1.5rem auto;
 }
 
+.itemDetailButton{
+    margin: 1rem auto;
+    font-size: 20px;
+    color: #049971;
+    border: solid #049971;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.itemDetailButton:hover{
+    background-color: #049971;
+    color: white;
+}
+
 
 
 
