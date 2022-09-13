@@ -12,7 +12,7 @@ function NavBar({sumaTotalCompras}) {
         <li><Link to='/category/cartas' className='linkNavBar'>Juegos de Cartas</Link></li>
         <li><Link to='/category/puzzle' className='linkNavBar'>Puzzles</Link></li>
         <li><Link to='/contacto' className='linkNavBar'>Contacto</Link></li>
-        <li><Link to='/miCarrito' className='linkNavBar'>Mi Carrito</Link></li>
+        <li><Link to='/cartContainer' className='linkNavBar'>Mi Carrito</Link></li>
         <li><CartWidget sumaTotalCompras={sumaTotalCompras}/></li>
       </ul>
     </div>

@@ -1,6 +1,10 @@
 import './CartWidget.css';
+import {useContext} from 'react'
+import { CartContext } from '../../Context/CartContext';
 
 function CartWidget({sumaTotalCompras}) {
+    const { countCartWidget } = useContext(CartContext)
+    sumaTotalCompras = countCartWidget()
     return (
         <div>
             <div className='bolsaDeCompras'>

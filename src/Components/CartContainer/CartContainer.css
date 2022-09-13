@@ -1,0 +1,26 @@
+h1{
+    margin: 2rem auto;
+    color: #049971;
+    font-family: 'Gochi Hand', cursive;
+}
+
+h3{
+    margin: 2rem auto;
+    color: #049971;
+    font-family: 'Gochi Hand', cursive;
+}
+
+.buttonCartContainer{
+    margin: 1rem auto;
+    font-size: 23px;
+    color: #049971;
+    border: solid #049971;
+    border-radius: 8px;
+    padding: 5px;
+    font-family: 'Gochi Hand', cursive;
+}
+
+.buttonCartContainer:hover{
+    background-color: #049971;
+    color: white;
+}

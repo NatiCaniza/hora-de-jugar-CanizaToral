@@ -2,13 +2,19 @@ import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
 import { useState } from "react";
 import {Link} from 'react-router-dom'
+import { useContext } from 'react';
+import { CartContext } from '../../Context/CartContext';
 
 const ItemDetail = ({item, onAdd2}) => {
     const {name, price, description, image, initial, stock} = item
 
+    const {addItem} = useContext(CartContext);
     const [sumaTotalCompras, setSumaTotalCompras] = useState(0);
-    const onAdd = (value) => {
-        if (value > 0) setSumaTotalCompras(sumaTotalCompras + value);
+
+    const onAdd = (count)=>{
+        const newProduct={...item, quantity:count}
+        addItem(newProduct);
+        if (count > 0) setSumaTotalCompras(sumaTotalCompras + count);
     }
 
     return (
@@ -23,7 +29,7 @@ const ItemDetail = ({item, onAdd2}) => {
                         sumaTotalCompras === 0 ? (
                             <ItemCount initial={initial} stock={stock} onAdd={onAdd} onAdd2={onAdd2} />
                         ) : (
-                            <Link to='/miCarrito'><button className="itemDetailButton">Ir a Mi Carrito</button>
+                            <Link to='/cartContainer'><button className="itemDetailButton">Ir a Mi Carrito</button>
                             </Link>
                         )
                     }

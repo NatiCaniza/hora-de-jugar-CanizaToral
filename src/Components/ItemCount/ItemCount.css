@@ -12,7 +12,7 @@
     display:flex;
     justify-content: space-between;
     width: 60%;
-    
+    font-family: 'Gochi Hand', cursive;
 }
 
 .botonAgregarQuitar{
@@ -22,6 +22,7 @@
     border: solid #049971;
     border-radius: 50%;
     color: #049971;
+    font-family: 'Gochi Hand', cursive;
 }
 
 .botonAgregarQuitar:hover{
@@ -37,15 +38,17 @@
     background-color: #049971;
     padding: 5px 5px;
     border-radius: 8px;
+    font-family: 'Gochi Hand', cursive;
 }
 
 .agregarAlCarrito{
     margin: 1rem auto;
-    font-size: 20px;
+    font-size: 23px;
     color: #049971;
     border: solid #049971;
     border-radius: 8px;
     padding: 5px;
+    font-family: 'Gochi Hand', cursive;
 }
 .agregarAlCarrito:hover{
     background-color: #049971;
@@ -78,6 +81,6 @@
 
 .itemCount h4{
     font-weight: 300;
-    font-size: 28px;
+    font-size: 30px;
     margin: 15px
 }
