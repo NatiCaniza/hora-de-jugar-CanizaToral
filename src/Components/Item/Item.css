@@ -2,7 +2,7 @@
     width: 330px;
     height: 370px;
     border-radius: 8px;
-    box-shadow: 1px 5px 5px  #049971;
+    box-shadow: 1px 5px 5px  #06d6a0;
     overflow: hidden;
     margin: 20px 59px;
     text-align: center;
@@ -14,7 +14,7 @@
 
 .item:hover{
     transform: translateY(-15px);
-    box-shadow: 3px 12px 16px  #049971;
+    box-shadow: 3px 12px 16px  #06d6a0;
 }
 
 .item img{
@@ -30,20 +30,20 @@
 
 .item h3{
     font-size: 20px;
-    color: #049971;
+    color: #06d6a0;
 }
 
 .item button{
     margin: 1rem auto;
     font-size: 23px;
-    color: #049971;
-    border: solid #049971;
+    color: #06d6a0;
+    border: solid #06d6a0;
     border-radius: 8px;
     padding: 5px;
     font-family: 'Gochi Hand', cursive;
 }
 
 .item button:hover{
-    background-color: #049971;
+    background-color:  #06d6a0;
     color: white;
 }

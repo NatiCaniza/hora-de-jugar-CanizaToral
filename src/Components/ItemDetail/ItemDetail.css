@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     border-radius: 8px;
-    box-shadow: 1px 5px 5px  #049971;
+    box-shadow: 1px 5px 5px #06d6a0;
     overflow: hidden;
     transition: all 0.25s;
     width: 530px;
@@ -14,7 +14,7 @@
 
 .itemDetail:hover{
     transform: translateY(-15px);
-    box-shadow: 3px 12px 16px  #049971;
+    box-shadow: 3px 12px 16px  #06d6a0;
 }
 
 .itemImage {
@@ -30,7 +30,7 @@
 .tituloCard{
     font-size: 30px;
     color: white;
-    background-color: #049971;
+    background-color: #06d6a0;
     margin: 2rem ;
     padding: 5px;
     border-radius: 8px;
@@ -45,7 +45,7 @@
 .itemDetail h3{
     font-size: 30px;
     color: white;
-    background-color: #049971;
+    background-color: #06d6a0;
     margin: 2rem ;
     padding: 1px;
     border-radius: 8px;
@@ -54,14 +54,14 @@
 .itemDetailButton{
     margin: 1rem auto;
     font-size: 23px;
-    color: #049971;
-    border: solid #049971;
+    color: #06d6a0;
+    border: solid #06d6a0;
     border-radius: 8px;
     padding: 5px;
     font-family: 'Gochi Hand', cursive;
 }
 
 .itemDetailButton:hover{
-    background-color: #049971;
+    background-color: #06d6a0;
     color: white;
 }
