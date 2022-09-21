@@ -3,10 +3,9 @@ import './ItemCount.css';
 
 export const ItemCount = ({stock , initial , onAdd, onAdd2}) =>{
     const [itemCount, setItemCount] = useState(initial);
-    const [itemStock, setItemStock] = useState(stock);
 
     const incrementar = () =>{
-        if (itemCount < itemStock){
+        if (itemCount < stock){
             setItemCount(itemCount + 1)
         }
     }
@@ -20,7 +19,6 @@ export const ItemCount = ({stock , initial , onAdd, onAdd2}) =>{
     const handleAdd = () => {
         onAdd(itemCount);
         onAdd2(itemCount);
-        setItemStock(itemStock - itemCount);
         setItemCount(0)
     }
 
