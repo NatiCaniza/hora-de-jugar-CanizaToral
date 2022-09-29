@@ -6,7 +6,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from '../../utils/firebase'
 
 
-const ItemDetailContainer = ({onAdd2}) => {
+const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -25,7 +25,7 @@ const ItemDetailContainer = ({onAdd2}) => {
     },[productId])
 
     const isLoading = loading ? <Loading /> : (
-        <ItemDetail onAdd2={onAdd2} item={item} />
+        <ItemDetail item={item} />
     );
 
     return(

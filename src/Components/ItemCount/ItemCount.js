@@ -1,8 +1,12 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import './ItemCount.css';
 
-export const ItemCount = ({stock , initial , onAdd, onAdd2}) =>{
+export const ItemCount = ({stock , initial , onAdd}) =>{
     const [itemCount, setItemCount] = useState(initial);
+
+    useEffect(() => {
+        setItemCount(initial)
+    }, [initial])
 
     const incrementar = () =>{
         if (itemCount < stock){
@@ -16,12 +20,6 @@ export const ItemCount = ({stock , initial , onAdd, onAdd2}) =>{
         }
     }
 
-    const handleAdd = () => {
-        onAdd(itemCount);
-        onAdd2(itemCount);
-        setItemCount(0)
-    }
-
     return(
         <div>
             <div className="agregarQuitarItem">
@@ -29,7 +27,7 @@ export const ItemCount = ({stock , initial , onAdd, onAdd2}) =>{
                 <p className="cantidadItem">{itemCount}</p>
                 <button className="botonAgregarQuitar" onClick={incrementar}>+</button>
             </div>
-            <button className="agregarAlCarrito" onClick={handleAdd}>Agregar al Carrito</button>
+            <button className="agregarAlCarrito" onClick={()=>onAdd(itemCount)}>Agregar al Carrito</button>
         </div>
     )
 }

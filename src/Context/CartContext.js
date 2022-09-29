@@ -38,12 +38,29 @@ export const CartProvider = ({children})=>{
 
     const countCartWidget=()=>{
         let acumulador = 0
-        productCartList.forEach(prod=>{acumulador += prod.quantity})
+        productCartList.forEach(prod=>{
+            acumulador += prod.quantity
+        })
         return acumulador
     }
 
+    
+    const countCartTotal = () => {
+        let acumulador = 0
+
+        productCartList.forEach(prod => {
+            acumulador += prod.quantity * prod.price
+        })
+        return acumulador
+    }
+
+    const getProductQuantity = (id) => {
+        const product = productCartList.find(elemento => elemento.id === id)
+        return product?.quantity
+    }
+
     return(
-        <CartContext.Provider value={{productCartList, addItem, removeItem, clear, isInCart,countCartWidget}}>
+        <CartContext.Provider value={{productCartList, addItem, removeItem, clear, isInCart,countCartWidget, countCartTotal, getProductQuantity}}>
             {children}
         </CartContext.Provider>
     )

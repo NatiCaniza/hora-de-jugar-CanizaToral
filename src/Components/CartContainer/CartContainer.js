@@ -5,7 +5,7 @@ import { CartContext } from '../../Context/CartContext';
 import { CartItem } from '../CartItem/CartItem';
 import {Link} from 'react-router-dom'
 import swal from 'sweetalert';
-
+import '../OrderForm/OrderForm'
 
 const CartContainer = () => {
     const {productCartList, clear} = useContext(CartContext)
@@ -35,8 +35,8 @@ const CartContainer = () => {
                                     <CartItem key={item.id} item={item} />
                                 ))
                             }
-                            
                             <button className='buttonCartContainer' onClick={()=> mostrarAlerta()}>Vaciar el carrito</button>
+                            <Link to='/contacto' className='contactoLink'>Toca aquí para terminar la compra</Link>
                         </>
                         :
                         <div className='cartVacio'>
@@ -44,6 +44,7 @@ const CartContainer = () => {
                             <Link className='cartLink' to='/'>Click aquí para ver productos</Link>
                         </div>
                 }
+                
             </div>
     )
 }
