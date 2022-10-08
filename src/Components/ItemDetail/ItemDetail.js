@@ -9,12 +9,12 @@ const ItemDetail = ({item}) => {
     const {name, price, description, image, initial, stock} = item
 
     const {addItem} = useContext(CartContext);
-    const [sumaTotalCompras, setSumaTotalCompras] = useState(0);
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
     const onAdd = (count)=>{
         const newProduct={...item, quantity:count}
         addItem(newProduct);
-        if (count > 0) setSumaTotalCompras(sumaTotalCompras + count);
+        if (count > 0) setTotalQuantity(totalQuantity + count);
     }
 
     return (
@@ -26,7 +26,7 @@ const ItemDetail = ({item}) => {
                 <h3>$ {price}</h3>
                 <div>
                     {
-                        sumaTotalCompras === 0 ? (
+                        totalQuantity === 0 ? (
                             <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
                         ) : (
                             <Link to='/cartContainer'><button className="itemDetailButton">Ir a Mi Carrito</button>

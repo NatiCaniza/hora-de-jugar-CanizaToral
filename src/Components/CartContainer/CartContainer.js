@@ -8,9 +8,9 @@ import swal from 'sweetalert';
 import '../OrderForm/OrderForm'
 
 const CartContainer = () => {
-    const {productCartList, clear} = useContext(CartContext)
+    const {productCartList, clear, wrongOrder} = useContext(CartContext)
 
-    const mostrarAlerta = () =>{
+    const showAlert = () =>{
         swal({
             title: 'Eliminar productos',
             text: 'Estás seguro que quieres vaciar tu carrito?',
@@ -24,6 +24,7 @@ const CartContainer = () => {
             }
         })
     }
+
     return (
             <div>
                 <h1>Mi Carrito</h1>
@@ -35,13 +36,13 @@ const CartContainer = () => {
                                     <CartItem key={item.id} item={item} />
                                 ))
                             }
-                            <button className='buttonCartContainer' onClick={()=> mostrarAlerta()}>Vaciar el carrito</button>
+                            <button className='buttonCartContainer' onClick={()=> showAlert()}>Vaciar el carrito</button>
                             <Link to='/contacto' className='contactoLink'>Toca aquí para terminar la compra</Link>
                         </>
                         :
                         <div className='cartVacio'>
                             <h2>Tu carrito está vacío :(</h2>
-                            <Link className='cartLink' to='/'>Click aquí para ver productos</Link>
+                            <Link className='cartLink' to='/' onClick={wrongOrder()}>Click aquí para ver productos</Link>
                         </div>
                 }
                 
