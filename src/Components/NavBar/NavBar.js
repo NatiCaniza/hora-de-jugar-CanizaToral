@@ -2,7 +2,7 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget'
 import {Link} from 'react-router-dom'
 
-function NavBar({totalQuantity}) {
+function NavBar() {
   return (
     <div className="NavBar">
       <Link to='/'><img className='logo' src='/img/logo_small.png' alt='Logo Hora de Jugar'/></Link>
@@ -13,7 +13,7 @@ function NavBar({totalQuantity}) {
         <li><Link to='/category/puzzle' className='linkNavBar'>Puzzles</Link></li>
         <li><Link to='/contacto' className='linkNavBar'>Mis Datos</Link></li>
         <li><Link to='/cartContainer' className='linkNavBar'>Mi Carrito</Link></li>
-        <li><CartWidget totalQuantity={totalQuantity}/></li>
+        <li><CartWidget /></li>
       </ul>
     </div>
   );

@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import './ItemCount.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const ItemCount = ({stock , initial , onAdd}) =>{
@@ -23,7 +23,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
     }
 
     const cartNotification = () => {
-        toast('🦄 Wow so easy!', {
+        toast('🎲 Producto agregado al carrito 🎲', {
             position: "bottom-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -44,9 +44,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
             <button className="agregarAlCarrito" onClick={() => {
                 onAdd(itemCount);
                 cartNotification();
-            }
-            }>Agregar al Carrito</button>
-            <ToastContainer />
+            }}>Agregar al Carrito</button>
         </div>
     )
 }

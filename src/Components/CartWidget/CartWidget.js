@@ -2,9 +2,9 @@ import './CartWidget.css';
 import {useContext} from 'react'
 import { CartContext } from '../../Context/CartContext';
 
-function CartWidget({ totalQuantity }) {
+function CartWidget() {
     const { countCartWidget, productCartList } = useContext(CartContext)
-    totalQuantity = countCartWidget()
+
     return (
         <div>
             {
@@ -12,9 +12,9 @@ function CartWidget({ totalQuantity }) {
 
                 <div>
                     <div className='bolsaDeCompras'>
-                        <img src='/img/bolsa-de-compra.png' alt='...' />
+                        <img src='/img/bolsa-de-compra.png' alt='Bolsa de Compras' />
                     </div>
-                    <div className='totalQuantity'>{totalQuantity}
+                    <div className='totalQuantity'>{countCartWidget()}
                     </div>
                 </div>
             }

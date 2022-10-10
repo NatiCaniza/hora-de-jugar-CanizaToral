@@ -16,14 +16,14 @@ const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
         setLoading(true)
 
-        const collectionRef = !categoryId 
-        ? collection (db, 'products') 
-        : query(collection (db, 'products'), where ('category', '==', categoryId))
+        const collectionRef = !categoryId
+            ? collection(db, 'products')
+            : query(collection(db, 'products'), where('category', '==', categoryId))
 
         getDocs(collectionRef).then(response => {
             const products = response.docs.map(doc => {
                 const values = doc.data()
-                return{ id:doc.id, ...values}
+                return { id: doc.id, ...values }
             })
             setProducts(products)
         }).catch(error => {
@@ -33,6 +33,8 @@ const ItemListContainer = ({ greeting }) => {
         })
     }, [categoryId])
 
+    const catalog = categoryId? `${categoryId}` : 'Todos Nuestros Productos'
+
     if (loading) {
         return <Loading />
     }
@@ -40,7 +42,7 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <div className='ItemListContainer'>
             <h1>{greeting}</h1>
-            <ItemList products={products} />
+            <ItemList products={products} catalog={catalog} />
         </div>
     )
 }

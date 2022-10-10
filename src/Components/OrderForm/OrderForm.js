@@ -3,9 +3,23 @@ import { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'
 import { db } from '../../utils/firebase'
 import { Timestamp, addDoc, collection, query, where, getDocs, documentId, writeBatch } from 'firebase/firestore'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import swal from 'sweetalert';
 
+const successfulOrder = (param)=>{
+    swal({
+        title: 'Compra realizada con éxito!',
+        text: `El código de su compra es: ${param.id}`,
+        button: 'Ok',
+    })
+}
+
+const wrongOrder = () =>{
+    swal({
+        title: 'Productos fuera de stock',
+        text:'Revise su compra y vuelva a intentarlo nuevamente',
+        button: 'Ok',
+    })
+}
 const OrderForm = () => {
     const { productCartList, countCartWidget, countCartTotal, clear } = useContext(CartContext)
 
@@ -58,26 +72,12 @@ const OrderForm = () => {
             const orderRef = collection(db, 'orders')
             const orderAdded = await addDoc(orderRef, order)
             batch.commit()
-            const successfulOrder = withReactContent(Swal)
-
-            successfulOrder.fire({
-                title: <p>Compra realizada con éxito!</p>,
-            }).then(() => {
-                return successfulOrder.fire(`El código de su compra es: ${orderAdded.id}`)
-            })
-            clear()
+            successfulOrder(orderAdded);
+            clear();
         } else {
-            const wrongOrder = withReactContent(Swal)
-
-            wrongOrder.fire({
-                title: <p>Productos fuera de stock</p>,
-            }).then(()=>{
-                return  wrongOrder.fire('Revise su compra e intentelo nuevamente')
-            })
-                
-            // console.log('Hay productos que estan fuera de stock')
+            wrongOrder();
         }
-        clear();
+        clear()
     }
 
     return (
@@ -102,7 +102,7 @@ const OrderForm = () => {
                     Email:
                     <input type="email" name="email" />
                 </label>
-                <button className='buttonForm' type="submit" onClick={()=> Swal()} >Terminar compra</button>
+                <button className='buttonForm' type="submit" >Terminar compra</button>
             </form>
         </div>
     )

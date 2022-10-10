@@ -5,32 +5,33 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import OrderForm from './Components/OrderForm/OrderForm';
 import CartContainer from './Components/CartContainer/CartContainer';
-import { useState } from 'react';
 import { CartProvider } from './Context/CartContext';
+import { ToastContainer } from 'react-toastify';
+import Footer from './Components/Footer/Footer';
 
 function App() {
-  const [numCarrito, setNumCarrito] = useState(0);
-  const onAdd2 = (value) => {
-    if (value > 0) setNumCarrito(numCarrito + value)
-  }
-
+  
   return (
     <CartProvider>
       <BrowserRouter>
         <div className="App">
           <header>
-            <NavBar sumaTotalCompras={numCarrito} />
+            <NavBar/>
             <Routes>
               <Route path='/' element={<ItemListContainer greeting={'Bienvenidos!'} />} />
               <Route path='/category/:categoryId' element={<ItemListContainer />} />
-              <Route path='/item/:productId' element={<ItemDetailContainer onAdd2={onAdd2} />} />
+              <Route path='/item/:productId' element={<ItemDetailContainer />} />
               <Route path='*' element={<ItemListContainer />} />
               <Route path='/contacto' element={<OrderForm />} />
               <Route path='/cartContainer' element={<CartContainer />} />
             </Routes>
+            <ToastContainer />
           </header>
         </div>
       </BrowserRouter>
+      <div>
+        <Footer />
+      </div>
     </CartProvider>
   );
 }

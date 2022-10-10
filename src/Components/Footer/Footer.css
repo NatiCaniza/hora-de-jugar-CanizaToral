@@ -1,0 +1,10 @@
+.footer{
+    background-color: #06d6a0;
+    margin-top: 2rem;
+}
+
+.textoFooter{
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
