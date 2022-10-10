@@ -15,7 +15,8 @@ const ItemListContainer = ({ greeting }) => {
 
     useEffect(() => {
         setLoading(true)
-
+        
+//Filtra los productos por categorias
         const collectionRef = !categoryId
             ? collection(db, 'products')
             : query(collection(db, 'products'), where('category', '==', categoryId))
@@ -33,8 +34,6 @@ const ItemListContainer = ({ greeting }) => {
         })
     }, [categoryId])
 
-    const catalog = categoryId? `${categoryId}` : 'Todos Nuestros Productos'
-
     if (loading) {
         return <Loading />
     }
@@ -42,7 +41,7 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <div className='ItemListContainer'>
             <h1>{greeting}</h1>
-            <ItemList products={products} catalog={catalog} />
+            <ItemList products={products} />
         </div>
     )
 }

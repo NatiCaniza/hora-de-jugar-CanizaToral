@@ -1,8 +1,8 @@
 import './ItemList.css';
 import Item from '../Item/Item'
 
-
-const ItemList = ({products, catalog})=>{
+//Se renderizan los productos
+const ItemList = ({products})=>{
     const renderProducts = products.map((prod) => {
             return(
                 <Item prod = {prod} key = {prod.id}/>
@@ -12,7 +12,6 @@ const ItemList = ({products, catalog})=>{
 
     return (
         <div>
-            <h1>{catalog}</h1>
             <div className='renderProducts'>{renderProducts}</div>
         </div>
     )

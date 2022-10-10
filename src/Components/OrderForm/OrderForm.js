@@ -5,6 +5,7 @@ import { db } from '../../utils/firebase'
 import { Timestamp, addDoc, collection, query, where, getDocs, documentId, writeBatch } from 'firebase/firestore'
 import swal from 'sweetalert';
 
+//Funciones que generan una notificacion cuando se termina correctamente la compra o cuando el producto esta fuera de stock
 const successfulOrder = (param)=>{
     swal({
         title: 'Compra realizada con éxito!',
@@ -20,6 +21,8 @@ const wrongOrder = () =>{
         button: 'Ok',
     })
 }
+
+//Se crea la orden de compra atraves de un formulario. Se actualiza es stock en la base de datos
 const OrderForm = () => {
     const { productCartList, countCartWidget, countCartTotal, clear } = useContext(CartContext)
 
@@ -40,6 +43,7 @@ const OrderForm = () => {
             total,
             date: Timestamp.fromDate(new Date())
         }
+
         addDoc(collection(db, 'orders'), order).then()
 
         const ids = productCartList.map(product => product.id)
@@ -71,11 +75,19 @@ const OrderForm = () => {
         if (outOfStock.length === 0) {
             const orderRef = collection(db, 'orders')
             const orderAdded = await addDoc(orderRef, order)
-            batch.commit()
+            batch.commit();
+            e.target.nombre.value= '';
+            e.target.telefono.value= '';
+            e.target.direccion.value= '';
+            e.target.email.value= '';
             successfulOrder(orderAdded);
             clear();
         } else {
             wrongOrder();
+            e.target.nombre.value= '';
+            e.target.telefono.value= '';
+            e.target.direccion.value= '';
+            e.target.email.value= '';
         }
         clear()
     }
@@ -88,19 +100,19 @@ const OrderForm = () => {
             <form className='orderForm' onSubmit={createOrder}>
                 <label className='labelForm'>
                     Nombre:
-                    <input type="text" name="nombre" />
+                    <input type="text" name="nombre" placeholder='Nombre' />
                 </label>
                 <label className='labelForm'>
                     Teléfono:
-                    <input type="tel" name="telefono" />
+                    <input type="tel" name="telefono" placeholder='Teléfono' />
                 </label>
                 <label className='labelForm'>
                     Dirección de envío:
-                    <input type="text" name="direccion" />
+                    <input type="text" name="direccion" placeholder='Dirección de envío' />
                 </label>
                 <label className='labelForm'>
                     Email:
-                    <input type="email" name="email" />
+                    <input type="email" name="email" placeholder='Email'/>
                 </label>
                 <button className='buttonForm' type="submit" >Terminar compra</button>
             </form>

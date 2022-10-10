@@ -11,6 +11,7 @@ const ItemDetail = ({item}) => {
     const {addItem} = useContext(CartContext);
     const [totalQuantity, setTotalQuantity] = useState(0);
 
+//Agrega productos al carrito
     const onAdd = (count)=>{
         const newProduct={...item, quantity:count}
         addItem(newProduct);

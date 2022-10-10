@@ -1,6 +1,7 @@
 import './Loading.css'
 import { SpinnerRoundFilled } from 'spinners-react';
 
+//Spinner que se muestra mientras se carga la página
 export default function Loading(){
     return (
         <div  className='loading'>

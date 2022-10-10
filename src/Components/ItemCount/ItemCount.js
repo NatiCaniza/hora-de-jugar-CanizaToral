@@ -10,6 +10,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
         setItemCount(initial)
     }, [initial])
 
+//Funciones para aumentar o quitar unidades de un producto al carrito
     const addProduct = () =>{
         if (itemCount < stock){
             setItemCount(itemCount + 1)
@@ -22,6 +23,7 @@ export const ItemCount = ({stock , initial , onAdd}) =>{
         }
     }
 
+//Notificacion que se muestra cuando un producto es agregado al carrito
     const cartNotification = () => {
         toast('🎲 Producto agregado al carrito 🎲', {
             position: "bottom-right",

@@ -10,6 +10,7 @@ import '../OrderForm/OrderForm'
 const CartContainer = () => {
     const {productCartList, clear } = useContext(CartContext)
 
+//Funciones que muestran alertas cuando se eliminan los pruductos del carrito y cuando no hay stock
     const showAlert = () =>{
         swal({
             title: 'Eliminar productos',
