@@ -2,7 +2,7 @@
     width: 320px;
     height: 370px;
     border-radius: 8px;
-    box-shadow: 1px 5px 5px  #06d6a0;
+    box-shadow: 1px 5px 5px #5e548e;
     overflow: hidden;
     margin: 20px 59px;
     text-align: center;
@@ -14,7 +14,7 @@
 
 .item:hover{
     transform: translateY(-15px);
-    box-shadow: 3px 12px 16px  #06d6a0;
+    box-shadow: 3px 12px 16px #5e548e;
 }
 
 .item img{
@@ -30,20 +30,26 @@
 
 .item h3{
     font-size: 20px;
-    color: #06d6a0;
+    color: #5e548e;
 }
 
 .item button{
     margin: 1rem auto;
     font-size: 23px;
-    color: #06d6a0;
-    border: solid #06d6a0;
+    color: #5e548e;
+    border: solid #5e548e;
     border-radius: 8px;
     padding: 5px;
     font-family: 'Gochi Hand', cursive;
 }
 
 .item button:hover{
-    background-color:  #06d6a0;
+    background-color: #5e548e;
     color: white;
+}
+
+@media (max-width: 768px){
+    .item{
+        margin: 18px 30px;
+    }
 }

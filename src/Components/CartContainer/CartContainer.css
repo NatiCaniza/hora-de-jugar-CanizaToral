@@ -1,55 +1,55 @@
 h1{
     margin: 2rem auto;
-    color: #06d6a0;
+    color: #5e548e;
     font-family: 'Gochi Hand', cursive;
 }
 
 h3{
     margin: 2rem auto;
-    color:  #06d6a0;
+    color:  #5e548e;
     font-family: 'Gochi Hand', cursive;
 }
 
 h2{
-    color:#049971;
+    color:#5e548e;
 }
 
 .buttonCartContainer{
     margin: 1rem auto;
     font-size: 23px;
-    color:  #06d6a0;
-    border: solid  #06d6a0;
+    color:  #5e548e;
+    border: solid  #5e548e;
     border-radius: 8px;
     padding: 5px;
     font-family: 'Gochi Hand', cursive;
 }
 
 .buttonCartContainer:hover{
-    background-color:  #06d6a0;
+    background-color: #5e548e;
     color: white;
 }
 
 .cartLink{
     font-size: 20px;
     text-decoration: none;
-    color:  #06d6a0;
+    color:#5e548e;
 }
 
 .cartLink:hover{
-    color: #049971;
+    color: #e0b1cb;
 }
 
 .contactoLink{
     font-size: 25px;
     text-decoration: none;
-    color:  #06d6a0;
+    color:  #5e548e;
     display: flex;
     flex-direction: column;
     margin: 1.5rem auto;
 }
 
 .contactoLink:hover{
-    color: #049971;
+    color: #e0b1cb;
 }
 
 .cartVacio{
@@ -57,7 +57,7 @@ h2{
     flex-direction: column;
     justify-content: space-evenly;
     border-radius: 8px;
-    box-shadow: 1px 5px 5px  #06d6a0;
+    box-shadow: 1px 5px 5px #5e548e;
     overflow: hidden;
     transition: all 0.25s;
     width: 530px;
@@ -66,7 +66,8 @@ h2{
     padding: 10px auto;
 }
 
-.cartVacio:hover{
-    transform: translateY(-15px);
-    box-shadow: 3px 12px 16px  #049971;
+@media (max-width: 768px){
+    .cartVacio{
+        margin: 38px 120px;
+    }
 }

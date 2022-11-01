@@ -1,7 +1,7 @@
 .totalQuantity{
     text-decoration: none;
     background-color: white;;
-    color: #06d6a0; 
+    color: #5e548e; 
     font-size: 20px;
     width: 25px;
     height: 25px;
@@ -13,6 +13,20 @@
 .bolsaDeCompras{
     margin-top: -2rem;
     margin-left: -3rem;
-    
 }
+
+@media (max-width: 768px){
+    .totalQuantity{
+        font-size: 15px;
+        width: 20px;
+        height: 20px;
+        margin-left: 3.5rem;
+    }
+
+    .bolsaDeCompras{
+        margin-left: -2rem;
+    }
+}
+
+
 

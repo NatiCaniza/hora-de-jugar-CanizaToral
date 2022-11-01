@@ -5,7 +5,7 @@ import { SpinnerRoundFilled } from 'spinners-react';
 export default function Loading(){
     return (
         <div  className='loading'>
-            <SpinnerRoundFilled size={90} thickness={180} speed={110} color="rgba(6, 214, 160, 1)" />
+            <SpinnerRoundFilled size={90} thickness={100} speed={100} color="rgba(94, 84, 142, 1)" />
         </div>
     )
 }
